@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "RollReview",
+    "slug": "ReactNativeDrills",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/RollReviewIcon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/RollReview2.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B032A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.cdb8987.ReactNativeDrills"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cf16a049-71bf-4687-9e3d-1f8c850635ff"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cf16a049-71bf-4687-9e3d-1f8c850635ff"
+    }
+  }
+}
