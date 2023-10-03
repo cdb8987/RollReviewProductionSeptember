@@ -1,12 +1,9 @@
 import React from "react";
 import {View, FlatList, StyleSheet} from 'react-native';
-import LocalVideoCard from './LocalVideoCard';
-import RedPlusFAB from './RedPlusFAB'
 import {useState, useContext, useEffect}from 'react'
 import { techniqueSelectionContext } from './Contexts/techniqueSelectionContext.js';
 import { positionSelectionContext } from './Contexts/positionSelectionContext.js';
 import {retrieveFilteredTutorials} from '../Functions/functions.js';
-import YoutubePlayer from 'react-native-youtube-iframe';
 import TutorialPlayback from "./TutorialPlayback";
 import { useIsFocused } from '@react-navigation/native'
 

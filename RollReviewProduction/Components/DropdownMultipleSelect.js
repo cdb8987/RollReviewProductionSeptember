@@ -7,7 +7,7 @@ import {
     ThemeProvider,
   } from "react-native-paper";
   import React, { useState, useMemo } from "react";
-  import { SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
+  import { StyleSheet } from "react-native";
   import DropDown from "react-native-paper-dropdown";
   
   function DropdownMultipleSelect({inputOptions, labelName, onSelectCallback}) {

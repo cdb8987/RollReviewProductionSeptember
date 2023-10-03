@@ -11,16 +11,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#1B032A"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/RollReviewIcon.png",
+        "backgroundColor": "#1B032A"
       },
       "permissions": [
         "android.permission.CAMERA",

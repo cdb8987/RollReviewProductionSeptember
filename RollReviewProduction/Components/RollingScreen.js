@@ -1,8 +1,5 @@
 import React from "react";
 import {View, FlatList, StyleSheet} from 'react-native';
-import LocalVideoCard from './LocalVideoCard';
-import RedPlusFAB from './RedPlusFAB'
-import * as FileSystem from 'expo-file-system';
 import {useState, useEffect, useRef, useContext} from 'react'
 import VideoPlayback from './VideoPlayback'
 import {getData} from '../Functions/functions'
@@ -11,7 +8,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { techniqueSelectionContext } from './Contexts/techniqueSelectionContext.js';
 import { positionSelectionContext } from './Contexts/positionSelectionContext.js';
 import DropdownSingleSelect from "./DropdownSingleSelect";
-import DropdownMultipleSelect from "./DropdownMultipleSelect";
+
 
 
 

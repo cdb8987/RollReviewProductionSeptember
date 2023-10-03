@@ -3,9 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import {Dimensions, View, Text} from 'react-native';
 import RollingScreen from '../Components/RollingScreen'
 import TutorialsScreen from '../Components/TutorialsScreen'
-import StatsScreen from '../Components/StatsScreen';
 import NotesScreen from '../Components/NotesScreen';
-
 import { useContext, useEffect, useState, useRef } from 'react';
 import { PositionSelectionChoicesContext } from '../Components/Contexts/PositionsSelectionChoicesContext';
 import { TechniqueSelectionChoicesContext } from '../Components/Contexts/TechniqueSelectionChoicesContext';
@@ -14,28 +12,18 @@ import { techniqueSelectionContext } from '../Components/Contexts/techniqueSelec
 import { positionSelectionContext } from '../Components/Contexts/positionSelectionContext';
 import {refreshContentFeedContext}from '../Components/Contexts/refreshContentFeedContext'
 import EmptyPlaceholderScreen from '../Components/EmptyPlaceholderScreen';
-import {MaterialCommunityIcons, Entypo, AntDesign, FontAwesome, SimpleLineIcons} from '@expo/vector-icons'
+import {MaterialCommunityIcons, AntDesign, SimpleLineIcons} from '@expo/vector-icons'
 import DropdownSingleSelect from '../Components/DropdownSingleSelect';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useIsFocused } from '@react-navigation/native';
 import AppBanner from '../Components/AppBanner';
 
-
-
-
-
- 
-
-
 const Tab = createMaterialTopTabNavigator();
 
 
-export default function DashboardTab() {
-  // const [positionSelection, setpositionSelection] = useState('')
-  // const [techniqueSelection, setTechniqueSelection] = useState('') 
+export default function DashboardTab() { 
   
   const isFocused = useIsFocused()
-
 
   useEffect(()=>{
     console.log('Dashboard Focused ', isFocused)
@@ -57,11 +45,6 @@ export default function DashboardTab() {
   const techniqueList = [...useContext(TechniqueSelectionChoicesContext)]
 
   
-
-  
-  
-  
-  
   console.log("DashBoardTabPosition List:", positionList, 'TechniqueList: ', techniqueList)
   const eventList = useContext(EventSelectionChoicesContext)
 
@@ -71,10 +54,6 @@ export default function DashboardTab() {
   console.log('DashboardTab Loaded')
   
 
-  // console.log(positionSelection, techniqueSelection)
-
-  
-  
   
   return (
     <>
@@ -128,7 +107,6 @@ export default function DashboardTab() {
         ),
       }}
       />
-      {/* <Tab.Screen name="Stats" component={StatsScreen} /> */}
     </Tab.Navigator>
     
     </positionSelectionContext.Provider>

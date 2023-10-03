@@ -8,7 +8,7 @@ import * as VideoThumbnails from 'expo-video-thumbnails';
 import * as FileSystem from 'expo-file-system';
 import { Divider } from 'react-native-paper';
 import EventTaggingModal from './Modals/EventTaggingModal';
-import { Modal, Portal, Button } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 import Emoji from 'react-native-emoji';
 
 
@@ -24,8 +24,7 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
   const month = dateRecord.getMonth()+1
   const year = dateRecord.getFullYear()
   const [eventTaggingModalSelected, setEventTaggingModalSelected] = useState(false)
-  // const [eventTypeSelection, setEventTypeSelection] = useState('')
-  // const [modalTimeStamp, setModalTimeStamp] = useState('')
+  
 
   const eventTypeSelection =useRef(null)
   const modalTimeStamp = useRef(null)

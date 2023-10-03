@@ -1,15 +1,10 @@
 import React from 'react'
-import { Camera, CameraType, requestMicrophonePermissionsAsync } from 'expo-camera';
 import { useState, useEffect } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions } from 'react-native';
-import { MaterialIcons, FontAwesome5  } from '@expo/vector-icons';
-import * as FileSystem from 'expo-file-system';
-import {getData, updateLocalVideoRecordData} from '../Functions/functions'
+import { StyleSheet, Dimensions } from 'react-native';
+import { FontAwesome5, Entypo  } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import VideoCameraScreen from '../Components/VideoCameraScreen';
 import RollReviewScreen from '../Components/RollReviewScreen';
-import {MaterialCommunityIcons, Entypo, AntDesign, FontAwesome, SimpleLineIcons} from '@expo/vector-icons'
-import * as ScreenOrientation from 'expo-screen-orientation';
 import AppBanner from '../Components/AppBanner';
 import { SetVideoCameraScreenSelected } from '../Components/Contexts/SetVideoCameraScreenSelected';
 

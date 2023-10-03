@@ -1,8 +1,8 @@
 import React from 'react'
-import { Camera, CameraOrientation, CameraType } from 'expo-camera';
+import { Camera, CameraType } from 'expo-camera';
 import { useState, useEffect, useContext} from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import { MaterialIcons, FontAwesome5  } from '@expo/vector-icons';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import * as FileSystem from 'expo-file-system';
 import {addLocalVideoFullRecord} from '../Functions/functions'
 import { useIsFocused } from '@react-navigation/native';
@@ -10,14 +10,9 @@ import * as VideoThumbnails from 'expo-video-thumbnails';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { SetVideoCameraScreenSelected } from './Contexts/SetVideoCameraScreenSelected';
 
-
-
-
-
-
 export default function VideoCameraScreen(){
   const [camera, setCamera] = useState(null)
-  const [image, setImage] = useState(null)
+  const [thumbnailImage, setThumbnailImage] = useState(null)
   const [video, setVideo] = useState(null)
   const [recordingVideo, setRecordingVideo]= useState(false)
   // let recordingVideo = false
@@ -80,7 +75,7 @@ export default function VideoCameraScreen(){
         
       );
   
-      setImage(thumbnail.uri);
+      setThumbnailImage(thumbnail.uri);
       return thumbnail
     } catch (e) {
       console.warn(e);

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import {  StyleSheet,  View,  ScrollView} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Piechart from './PieChart.js';
 import { useContext, useEffect } from 'react'

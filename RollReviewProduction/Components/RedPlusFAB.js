@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { FAB, Portal, PaperProvider  } from 'react-native-paper';
+import { FAB, Portal  } from 'react-native-paper';
 import {StyleSheet} from 'react-native'
 import {BottomNavigationHeightContext} from './Contexts/BottomNavigationHeightContext';
-import { useContext, useState } from 'react';
-import InputDrillModal from './Modals/InputDrillModal';
+import { useContext } from 'react';
+
 
 const RedPlusFAB = ({
   style, 

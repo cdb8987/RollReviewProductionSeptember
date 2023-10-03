@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import Emoji from 'react-native-emoji';
 
 export default function Rollrecord(props){
-    const { position , technique, result, notes, createdAt, } = props
+    const { position , technique, result, notes, createdAt } = props
     const emoji = (result=='Win')? <Emoji name="white_check_mark" style={{fontSize: 30}} /> : <Emoji name="x" style={{fontSize: 30}} />
     const d = new Date(createdAt)
     // const dateString = `${}`

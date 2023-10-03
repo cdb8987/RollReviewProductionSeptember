@@ -3,7 +3,7 @@ import React from 'react'
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native'
 import {Divider} from 'react-native-paper'
 import YoutubePlayer from 'react-native-youtube-iframe';
-import {useState, useEffect} from 'react'
+
 
 
 export default function TutorialPlayback({youtubevideoId, thumbNailURL, technique, position, notes, videoRecord, selectedVideoKey, onSelect, isFocused}){

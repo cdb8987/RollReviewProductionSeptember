@@ -1,3 +1,30 @@
+// import React from 'react'
+// import {View, Text} from 'react-native'
+// import 'react-native-gesture-handler';
+// import { NavigationContainer } from '@react-navigation/native'
+// import BottomNavigationBar from './Tabs/BottomNavigationBar'
+
+// export default function App(){
+//   return (
+//     <NavigationContainer >
+               
+//             <BottomNavigationBar />   
+        
+//     </NavigationContainer>
+//            )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 import 'react-native-gesture-handler';
 import React from 'react';
 // import { StatusBar } from 'expo-status-bar';
@@ -14,19 +41,12 @@ import { BottomNavigationHeightContext } from './Components/Contexts/BottomNavig
 import ModalContainer from './Components/Modals/ModalContainer';
 import {AndroidContext} from './Components/Contexts/AndroidContext'
 import {BackgroundImageContext} from './Components/Contexts/BackgroundImageContext'
-import VideoPlayback from './Components/VideoPlayback';
-import RollingScreen from './Components/RollingScreen';
-import ClippedVideoPlayback from './Components/ClippedVideoPlayback'
 import { techniqueSelectionContext } from './Components/Contexts/techniqueSelectionContext';
 import {positionSelectionContext}from './Components/Contexts/positionSelectionContext' 
-import DropdownSingleSelect from './Components/DropdownSingleSelect';
-import DropdownMultipleSelect from './Components/DropdownMultipleSelect'
-// import { loadPositionsAndTechniques, startingPositions, startingTechniques } from './Functions/functions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SetPositionsContext } from './Components/Contexts/SetPositionsContext';
 import { SetTechniquesContext } from './Components/Contexts/SetTechniquesContext';
 
-const image=require("./assets/Aegis_Clear_Logo.png")
 const isAndroid = Platform.OS == 'android'
 
 export default function App() {
@@ -88,7 +108,7 @@ export default function App() {
     <positionSelectionContext.Provider value={{positionSelection, setpositionSelection}}>
     
       
-    <BackgroundImageContext.Provider value={image}>
+    <BackgroundImageContext.Provider value={null}>
     <AndroidContext.Provider value={isAndroid}>
     <PositionSelectionChoicesContext.Provider value={positions}>
     <TechniqueSelectionChoicesContext.Provider value={techniques}>
@@ -120,10 +140,6 @@ export default function App() {
     </positionSelectionContext.Provider>
     </techniqueSelectionContext.Provider>
     
-    
-    
-    
-   
   );
 }
 

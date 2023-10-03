@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialIcons, Entypo, Ionicons, Feather, AntDesign } from '@expo/vector-icons';
+import { MaterialIcons, Entypo, Feather, AntDesign } from '@expo/vector-icons';
 import DashboardTab from './DashboardTab';
 import RecordTab from './RecordTab'
 import StatsTab from './StatsTab'
 import MoreTab from './MoreTab'
-import VideoCameraScreen from '../Components/VideoCameraScreen'
-import RollReviewScreen from '../Components/RollReviewScreen';
+import EmptyPlaceholderScreen from '../Components/EmptyPlaceholderScreen';
+
 
 
 

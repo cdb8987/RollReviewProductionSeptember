@@ -64,3 +64,12 @@ ok so we found out that we never actually 'setState' to a sorted list directly. 
 When you add a new position or technique from the modal and then add a note from that modal, the note doesn't get recorded. However, it does get recorded the NEXT time you do it. Also, if you back out of the modal and reenter it, the first record will be recorded.
 
 Hypotheses: Either the dropdown cannot select the newly input value, or the data is validated prior to being recorded against a list of valid values. Lets check and see.
+
+ANDROID ERRORS TO CHECK
+
+qemu_pipe_open_ns:62: Could not connect to the 'pipe:qemud:network' service: Invalid argument
+2023-09-24 13:55:07.880 493-493 netmgr netmgr E Failed to open QEMU pipe 'qemud:network': Invalid argument
+2023-09-24 13:55:08.113 507-507 wifi_forwarder wifi_forwarder E qemu_pipe_open_ns:62: Could not connect to the 'pipe:qemud:wififorward' service: Invalid argument
+2023-09-24 13:55:08.113 507-507 wifi_forwarder wifi_forwarder E RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+
+sendWakeUpEvent called on SchedulerClientBroadcastStrategy

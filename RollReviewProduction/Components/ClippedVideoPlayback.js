@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, Button, Image, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import { Video, Audio, ResizeMode } from 'expo-av';
 import {useEffect, useState} from 'react'
 import { Divider} from 'react-native-paper';

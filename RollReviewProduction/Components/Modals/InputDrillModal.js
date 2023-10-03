@@ -1,12 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from "react";
 import Notesinput from './NotesInput';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useContext, useState, useRef } from 'react'
 import { PositionSelectionChoicesContext } from '../Contexts/PositionsSelectionChoicesContext';
 import { TechniqueSelectionChoicesContext } from '../Contexts/TechniqueSelectionChoicesContext';
-import { EventSelectionChoicesContext } from '../Contexts/EventSelectionChoicesContext';
 import { Modal, Portal, Button} from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
 import { techniqueSelectionContext } from '../Contexts/techniqueSelectionContext';
