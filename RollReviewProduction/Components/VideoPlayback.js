@@ -78,11 +78,13 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
   async function openEventModal(eventType, video){
     
     await video.current.pauseAsync();
+    eventTypeSelection.current=eventType;
+    modalTimeStamp.current=Number(String(PlaybackTimeRef.current));
+    
     await setEventTaggingModalSelected(true)
     
      
-    eventTypeSelection.current=eventType;
-    modalTimeStamp.current=Number(String(PlaybackTimeRef.current)); 
+     
     
      
     

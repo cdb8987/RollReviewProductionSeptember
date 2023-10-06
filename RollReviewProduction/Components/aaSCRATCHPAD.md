@@ -73,3 +73,5 @@ qemu_pipe_open_ns:62: Could not connect to the 'pipe:qemud:network' service: Inv
 2023-09-24 13:55:08.113 507-507 wifi_forwarder wifi_forwarder E RemoteConnection failed to initialize: RemoteConnection failed to open pipe
 
 sendWakeUpEvent called on SchedulerClientBroadcastStrategy
+
+Okay we have a problem with the modals. When you enter a modal, then back out of it and click a new modal, the old modal will appear. This behavior only happens when you don't restart the video play. If you do the same thing, but start the video play in between, the new modal pops up normally. It appears that restarting the video is helping to reset the modal I need to confirm this and build a workaround.
