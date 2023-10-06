@@ -48,7 +48,7 @@ export default function VideoCameraScreen(){
     if (!cameraPermission.granted || !microphonePermission.granted){
       return (
       <View style={styles.container}>
-      <Text style={{ textAlign: 'center' }}>We need Camera/Microphone permissions to record videos.  </Text>
+      <Text style={{ textAlign: 'center' }}>RollReview needs Camera/Microphone permissions to record and play videos.  </Text>
       <Button onPress={requestCameraPermission} title="grant cameraPermission" />
       <Button onPress={requestMicrophonePermission} title="grant microphonePermission" />
     </View>)
