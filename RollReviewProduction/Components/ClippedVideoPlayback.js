@@ -66,7 +66,7 @@ export default function ClippedVideoPlayback({
         onPlaybackStatusUpdate={(status) => { 
             if(status.positionMillis > endTimeStamp){
                 const handleVideoEnd = async()=>{
-                await videoRef.current.setPositionAsync(videoRecord.timestamp)
+                await videoRef.current.setPositionAsync(videoRecord.timestamp - 10000)
 
                 }
                 handleVideoEnd()
