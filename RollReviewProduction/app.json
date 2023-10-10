@@ -2,7 +2,7 @@
   "expo": {
     "name": "RollReview",
     "slug": "ReactNativeDrills",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "default",
     "icon": "./assets/RollReviewIcon.png",
     "userInterfaceStyle": "light",
