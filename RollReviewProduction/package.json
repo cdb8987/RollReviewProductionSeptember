@@ -28,7 +28,7 @@
     "expo-media-library": "^15.4.1",
     "expo-screen-orientation": "~6.0.5",
     "expo-status-bar": "~1.6.0",
-    "expo-updates": "~0.18.14",
+    "expo-updates": "~0.18.16",
     "expo-video-thumbnails": "~7.4.0",
     "i": "^0.3.7",
     "prettier": "^3.0.2",
