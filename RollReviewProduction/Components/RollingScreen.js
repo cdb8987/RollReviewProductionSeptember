@@ -70,7 +70,7 @@ export default function RollingScreen(){
             catch(error){console.log('line 70 ROllingScreen.js', error)}
         }
       }
-      if(resultSelection === ''){setVideos(clipsArray)}
+      if(resultSelection === ''){setVideos(clipsArray.reverse())}
       else{const filteredClipsArray = clipsArray.filter(x=>x.result === resultSelection); setVideos(filteredClipsArray)}
       
     

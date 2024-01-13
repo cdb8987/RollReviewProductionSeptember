@@ -315,7 +315,7 @@ async function retrieveFilteredLocalVideoRecords(){
     catch(error){console.log('RetrievefilteredVIDEORecords FAILED' + error)}
     return []}
 
-    
+
 
 
 

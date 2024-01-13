@@ -24,6 +24,7 @@
         "foregroundImage": "./assets/RollReviewIcon.png",
         "backgroundColor": "#1B032A"
       },
+      "versionCode": 2,
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"

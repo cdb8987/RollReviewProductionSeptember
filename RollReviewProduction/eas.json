@@ -2,15 +2,21 @@
   "cli": {
     "version": ">= 3.17.1"
   },
+
   "build": {
     "preview": {
-      "ios": {
-        "simulator": true
+      "android": {
+        "buildType": "apk"
       }
     },
-    "production": {}
-  },
-  "submit": {
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
     "production": {}
   }
 }

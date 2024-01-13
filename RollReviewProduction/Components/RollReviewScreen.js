@@ -34,7 +34,7 @@ export default function RollReviewScreen(){
             }
         }
         
-        setVideos(FullVideosArray);
+        setVideos(FullVideosArray.reverse());
          }; 
          getURIs()
         }, [isFocused])
