@@ -13,7 +13,7 @@ import { SetVideoCameraScreenSelected } from '../Components/Contexts/SetVideoCam
 const Tab = createMaterialTopTabNavigator();
 
 export default function RecordTab(){
-  console.log('Record Tab Loaded')
+  
   const [videoCameraScreenSelected, setVideoCameraScreenSelected] = useState(false)
   
   const appBanner= videoCameraScreenSelected? null: <AppBanner/>

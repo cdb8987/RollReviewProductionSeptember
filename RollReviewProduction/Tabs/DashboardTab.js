@@ -26,7 +26,7 @@ export default function DashboardTab() {
   const isFocused = useIsFocused()
 
   useEffect(()=>{
-    console.log('Dashboard Focused ', isFocused)
+    
     async function lockScreenOrientationtoPortrait(){
       
       await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
@@ -35,7 +35,7 @@ export default function DashboardTab() {
     if(isFocused){lockScreenOrientationtoPortrait()}
   }, [isFocused])
 
-  console.log('DASHBOARD RENDERED!')
+  
   
   
   const {techniqueSelection, setTechniqueSelection} = useContext(techniqueSelectionContext) 
@@ -45,13 +45,13 @@ export default function DashboardTab() {
   const techniqueList = [...useContext(TechniqueSelectionChoicesContext)]
 
   
-  console.log("DashBoardTabPosition List:", positionList, 'TechniqueList: ', techniqueList)
+  
   const eventList = useContext(EventSelectionChoicesContext)
 
 
   
 
-  console.log('DashboardTab Loaded')
+  
   
 
   

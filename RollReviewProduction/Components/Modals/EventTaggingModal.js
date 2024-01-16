@@ -33,14 +33,14 @@ export default function EventTaggingModal({
   
 }){
     
-    console.log('\nvisible', visible, 
-  '\nsetVisible', setVisible, 
-  '\ntimestamp',timestamp, 
-  '\neventType',eventType, 
-  '\naddLocalVideoClipRecord',addLocalVideoClipRecord, 
-  '\ngenerateThumbnailatTimeStamp',generateThumbnailatTimeStamp, 
-  '\nvideoRecord',videoRecord,
-  '\nmodalSelected',modalSelected,)
+  //   console.log('\nvisible', visible, 
+  // '\nsetVisible', setVisible, 
+  // '\ntimestamp',timestamp, 
+  // '\neventType',eventType, 
+  // '\naddLocalVideoClipRecord',addLocalVideoClipRecord, 
+  // '\ngenerateThumbnailatTimeStamp',generateThumbnailatTimeStamp, 
+  // '\nvideoRecord',videoRecord,
+  // '\nmodalSelected',modalSelected,)
 
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);

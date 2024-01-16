@@ -53,7 +53,7 @@ export default function App() {
 
 
   //"npm": "^9.8.1",
-  console.log('APP.JS rendered')
+  
   let startingPositions = [ "Guard", "Mount", "Side Control", "Back Control"  ]
   let startingTechniques = [ "Armbar", "Escape", "Head and Arm Choke", "Kimura", "Lapel Choke", "Rear Naked Choke", "Sweep", "Triangle Choke", "Americana"]
 
@@ -80,7 +80,6 @@ export default function App() {
         if(String(storedTechniques.sort())!==String(techniques.sort())){
           console.log('Setting Technique State Values to:', storedTechniques); 
           setTechniques(storedTechniques); 
-          console.log('Current State Values:', techniques)
           console.log('STORED TECHNIQUES ARE NOT THE SAME AS STATE TECHNIQUES')}
       }
       else{
@@ -101,7 +100,7 @@ export default function App() {
   }
   const [positionSelection, setpositionSelection] = useState('')
   const [techniqueSelection, setTechniqueSelection] = useState('')
-  console.log(positionSelection, typeof positionSelection, positionSelection==='')
+  
   
   return (
     <techniqueSelectionContext.Provider value={{techniqueSelection, setTechniqueSelection}}>

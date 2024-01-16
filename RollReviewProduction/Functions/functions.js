@@ -148,7 +148,7 @@ export const handleAddPosition = async(positions, setPositions, newPosition)=>{
           newTechnique = 'X-' + newTechnique
       
       }
-      console.log('handleAddTechnique RAN! line 161 in functions')
+      
       newTechniqueArray.push(newTechnique)
       const sortedArray = newTechniqueArray.sort()
       setTechniques(sortedArray)

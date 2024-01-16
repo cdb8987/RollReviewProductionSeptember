@@ -46,7 +46,7 @@ export default function NotesScreen (){
                 />
             )
         }
-        else{ console.log(record); return <View><Text>Incorrectly formatted.  not finding drill or roll.  </Text></View>}
+        else{  return <View><Text>Incorrectly formatted.  not finding drill or roll.  </Text></View>}
         }
 
         return (

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ClippedVideoPlayback snapshot 1`] = `
+[
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingTop": 10,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          {
+            "fontSize": 24,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Escape
+         | 
+         | 
+        Improved Position
+      </Text>
+      <Text>
+         
+        NaN
+        -
+        NaN
+         
+        NaN
+      </Text>
+      <Text>
+        NOTES: 
+      </Text>
+    </View>
+    <Image
+      source={
+        {
+          "uri": "file:///data/user/0/host.exp.exponent/files/1695665429971.jpg",
+        }
+      }
+      style={
+        {
+          "alignItems": "center",
+          "height": 300,
+          "justifyContent": "center",
+          "width": 300,
+        }
+      }
+    />
+  </View>,
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "rgba(202, 196, 208, 1)",
+          "height": 0.5,
+        },
+        undefined,
+        false,
+        false,
+        undefined,
+      ]
+    }
+  />,
+]
+`;

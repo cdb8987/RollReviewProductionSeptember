@@ -7,7 +7,7 @@ import AppBanner from '../Components/AppBanner';
 export default function MoreTab(){
   async function lockScreenOrientationtoPortrait() {
   await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
-  console.log('orientation locked')
+  
 }
   lockScreenOrientationtoPortrait()
     return (

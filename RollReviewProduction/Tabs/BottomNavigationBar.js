@@ -15,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 
 function BottomNavigationBar() {
-  console.log('Bottom Navigation Loaded')
+  
   
   
   return (

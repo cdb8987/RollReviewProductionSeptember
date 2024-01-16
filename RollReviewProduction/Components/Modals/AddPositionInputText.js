@@ -1,11 +1,14 @@
+
 import React from 'react'
 import {useState} from 'react'
-import { Button}from 'react-native'
+import { Button, View}from 'react-native'
 import {TextInput} from 'react-native-paper'
 
 
 export default function AddPositionInputText({handleAdd,positions, setPositions, onDismiss }){
+
         const [text, setText] = useState('')
+        
 
         return (
             <>
@@ -34,6 +37,8 @@ export default function AddPositionInputText({handleAdd,positions, setPositions,
             </>
 
         )
+
+        
 }
 
 
