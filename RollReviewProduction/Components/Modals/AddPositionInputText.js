@@ -3,7 +3,7 @@ import React from 'react'
 import {useState} from 'react'
 import { Button, View}from 'react-native'
 import {TextInput} from 'react-native-paper'
-
+//
 
 export default function AddPositionInputText({handleAdd,positions, setPositions, onDismiss }){
 
