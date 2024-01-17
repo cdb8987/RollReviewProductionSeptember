@@ -59,30 +59,209 @@ exports[`Shallow Render matches snapshot: AddTechniqueInputText 1`] = `
 `;
 
 exports[`Shallow Render matches snapshot: EnterURLInputbox 1`] = `
-<React.Fragment>
-  <ForwardRef
-    defaultValue=""
-    onChangeText={[Function]}
-    outlined={true}
-    placeholder="..."
-    style={
+<withTheme(Portal)>
+  <Modal
+    contentContainerStyle={
       {
         "backgroundColor": "white",
         "flex": 1,
-        "height": 40,
+        "padding": 20,
       }
     }
-  />
-  <Button
-    compact={true}
-    mode="contained"
-    onPress={[Function]}
+    onDismiss={[Function]}
     style={
       {
-        "marginTop": 15,
+        "flex": 1,
       }
     }
-    title="ADD"
+  >
+    <KeyboardAwareScrollView
+      enableAutomaticScroll={true}
+      enableOnAndroid={false}
+      enableResetScrollToCoords={true}
+      extraHeight={75}
+      extraScrollHeight={0}
+      keyboardOpeningTime={250}
+      viewIsInsideTabBar={false}
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "white",
+            "flex": 1,
+            "width": "100%",
+          }
+        }
+      >
+        <TopBar />
+        <View
+          style={
+            {
+              "backgroundColor": "white",
+              "flex": 2,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 5,
+                }
+              }
+            >
+              <DropdownSingleSelect
+                labelName="Position"
+                onSelectCallback={[Function]}
+              />
+            </View>
+            <View
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <ForwardRef(Button)
+                onPress={[Function]}
+              >
+                <Icon
+                  allowFontScaling={false}
+                  color="black"
+                  name="plus"
+                  size={24}
+                />
+              </ForwardRef(Button)>
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 5,
+                }
+              }
+            >
+              <DropdownSingleSelect
+                labelName="Technique"
+                onSelectCallback={[Function]}
+              />
+            </View>
+            <View
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <ForwardRef(Button)
+                onPress={[Function]}
+              >
+                <Icon
+                  allowFontScaling={false}
+                  color="black"
+                  name="plus"
+                  size={24}
+                />
+              </ForwardRef(Button)>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            {
+              "backgroundColor": "white",
+              "flex": 1,
+            }
+          }
+        >
+          <Notesinput
+            updateNotes={[Function]}
+          />
+        </View>
+        <ForwardRef(Button)
+          buttonColor="white"
+          mode="outlined"
+          onPress={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#6699ff",
+              "flex": 2,
+              "justifyContent": "center",
+              "width": "100%",
+            }
+          }
+          textColor="black"
+        >
+          TAG 
+           
+        </ForwardRef(Button)>
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        />
+      </View>
+    </KeyboardAwareScrollView>
+  </Modal>
+  <AddPositionTextInputModal />
+  <AddTechniqueTextInputModal />
+</withTheme(Portal)>
+`;
+
+exports[`Shallow Render matches snapshot: ModalContainer 1`] = `
+<React.Fragment>
+  <InputDrillModal
+    setVisible={[Function]}
+    visible={false}
+  />
+  <InputRollModal
+    setVisible={[Function]}
+    visible={false}
+  />
+  <InputLocalVideoModal
+    setVisible={[Function]}
+    visible={false}
+  />
+  <InputTutorialModal
+    setVisible={[Function]}
+    visible={false}
+  />
+  <RedPlusFAB
+    setInputDrillModalVisible={[Function]}
+    setInputRollModalVisible={[Function]}
+    setInputTutorialModalVisible={[Function]}
+    setLocalVideoModalVisible={[Function]}
+    style={
+      {
+        "marginBottom": 110,
+        "marginRight": 10,
+        "position": "absolute",
+      }
+    }
+    visible={true}
   />
 </React.Fragment>
 `;
