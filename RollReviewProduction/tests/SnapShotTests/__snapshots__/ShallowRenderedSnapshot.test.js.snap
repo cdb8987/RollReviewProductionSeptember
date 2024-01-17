@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shallow Render matches snapshot: AddPositionInputText 1`] = `
+<React.Fragment>
+  <ForwardRef
+    defaultValue=""
+    onChangeText={[Function]}
+    outlined={true}
+    placeholder="..."
+    style={
+      {
+        "backgroundColor": "white",
+        "flex": 1,
+        "height": 40,
+      }
+    }
+  />
+  <Button
+    compact={true}
+    mode="contained"
+    onPress={[Function]}
+    style={
+      {
+        "marginTop": 15,
+      }
+    }
+    title="ADD"
+  />
+</React.Fragment>
+`;
+
+exports[`Shallow Render matches snapshot: AddTechniqueInputText 1`] = `
+<React.Fragment>
+  <ForwardRef
+    defaultValue=""
+    onChangeText={[Function]}
+    outlined={true}
+    placeholder="..."
+    style={
+      {
+        "backgroundColor": "white",
+        "flex": 1,
+        "height": 40,
+      }
+    }
+  />
+  <Button
+    compact={true}
+    mode="contained"
+    onPress={[Function]}
+    style={
+      {
+        "marginTop": 15,
+      }
+    }
+    title="ADD"
+  />
+</React.Fragment>
+`;
+
+exports[`Shallow Render matches snapshot: EnterURLInputbox 1`] = `
+<React.Fragment>
+  <ForwardRef
+    defaultValue=""
+    onChangeText={[Function]}
+    outlined={true}
+    placeholder="..."
+    style={
+      {
+        "backgroundColor": "white",
+        "flex": 1,
+        "height": 40,
+      }
+    }
+  />
+  <Button
+    compact={true}
+    mode="contained"
+    onPress={[Function]}
+    style={
+      {
+        "marginTop": 15,
+      }
+    }
+    title="ADD"
+  />
+</React.Fragment>
+`;

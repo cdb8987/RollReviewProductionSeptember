@@ -20,6 +20,8 @@ test('Counter Button Increments by 1', ()=>{
     expect(countDisplay.props.children).toEqual(1);
     act(()=>{incrementButton.props.onPress()})
     expect(countDisplay.props.children).toEqual(2);
+
+    expect(tree).toMatchSnapshot()
     
     
     

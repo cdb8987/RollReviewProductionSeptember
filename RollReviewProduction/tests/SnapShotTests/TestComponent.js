@@ -4,7 +4,8 @@ import testComponentChild from './testComponentChild'
 import { useState } from 'react'
 export default function TestComponent(){
         const [count, setCount] = useState(0)
-        const incrementCount = ()=>{console.log('INCREMENT BUTTON PRESSED'); setCount(()=>count + 1)}
+        const incrementCount = ()=>{setCount(()=>count + 1)}
+        
         return (<View>
                     <TouchableOpacity
                         onPress={incrementCount}

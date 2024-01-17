@@ -18,7 +18,8 @@ export default function AddPositionInputText({handleAdd,positions, setPositions,
                 onChangeText={(newText) => {setText(newText)}}
                 defaultValue={text}
                 outlined={true}
-                />
+                
+            />
             <Button 
                 style={{marginTop: 15}}
                 compact={true} 
