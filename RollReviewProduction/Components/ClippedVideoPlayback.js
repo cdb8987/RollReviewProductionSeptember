@@ -14,7 +14,7 @@ export default function ClippedVideoPlayback({
   selectedVideoKey, 
   onSelect}) {
   //inFocusStatus refers to whether the video is scrolled over and hovered on
-
+  
 
   const videoRef = React.useRef(null);
   const [status, setStatus] = useState({});
