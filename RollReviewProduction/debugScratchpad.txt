@@ -1,0 +1,3 @@
+Does FFMpeg have access to local video uris?  
+VERIFY:  pass in created URI, execute ffmpeg operation on it, see if it works
+--Build the app with the ffmpeg module in the "more" component.  Set the app to console log URI file paths.  Then copy and paste file path into the ffmpeg section and see if it returns a "no such file or directory" error.  If it doesn't, we can move on.  
