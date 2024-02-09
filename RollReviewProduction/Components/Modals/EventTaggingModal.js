@@ -152,7 +152,7 @@ const AddPositionTextInputModal = ()=>{
         const uriWithoutSuffix = videoRecord.uri.split('.mp4')[0]
         const outputPath = videoRecord.uri + "FFMPEG" + d.getTime() + '.mp4'  
         trimVideoWithFFmpeg(videoRecord.uri, timestamp/1000, 10000/1000, outputPath)
-        
+        //
         //set localVideoClip record to point to ffmpeg generated video URI
         eventRecord['uri']= outputPath
         eventRecord['thumbnailURI']=await generateThumbnailatTimeStamp(videoRecord.uri, timestamp)
