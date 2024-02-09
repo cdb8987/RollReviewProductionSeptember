@@ -4,6 +4,9 @@ VERIFY:  pass in created URI, execute ffmpeg operation on it, see if it works---
 
 Functional component:  I asked chatGPT to convert a class component FFMpeg (which worked on my device) into a functional component so I could modify it.  However, I cannot test it without building it as an apk.  I'm running that build now.  If it works, then the ffmpeg piece works, then I know there is a problem with the integration of the component into roll review (or a problem with the build environment of roll review which I have not verified.).  It is most likely one of the following:
 - issue with the functional component transformation
+    -UPDATE -- FUNCTIONAL COMPONENT CRASHED IN ISOLATION -- error message on android -
+    "com.facebook.react.common.JavascriptException: TypeError: undefined is not a function"
+    -Error is at the javascript layer.  YAY!  I can debug without constant rebuilds.  
 - error with the integration
 - error with the build environment in rollReview that is different than the build environment in ffmpeg1
 
