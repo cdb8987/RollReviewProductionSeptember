@@ -44,7 +44,7 @@ class ClippingFunction extends Component {
     clearOutput() {
         this.setState({outputText: ''});
     }
-
+    //Executes the FFmpeg operation
     runFFmpeg = () => {
         this.clearOutput();
 
@@ -145,132 +145,6 @@ class ClippingFunction extends Component {
 }
 export default ClippingFunction;
 
-
-// function notNull(string, valuePrefix) {
-//   return string === undefined || string == null ? '' : valuePrefix.concat(string);
-// }
-
-// const ClippingFunction = () => {
-//   const [commandText, setCommandText] = useState('');
-//   const [outputText, setOutputText] = useState('');
-
-//   useEffect(() => {
-//     clearOutput();
-//     setActive();
-//   }, []);
-
-//   const setActive = () => {
-//     FFmpegKit.enableLogCallback(undefined);
-//     FFmpegKit.enableStatisticsCallback(undefined);
-//   };
-
-//   const appendOutput = (logMessage) => {
-//     setOutputText(prevOutputText => prevOutputText + logMessage);
-//   };
-
-//   const clearOutput = () => {
-//     setOutputText('');
-//   };
-
-//   const runFFmpeg = () => {
-//     clearOutput();
-
-//     let ffmpegCommand = commandText;
-
-//     console.log(`Current log level is ${FFmpegKit.getLogLevel()}.`);
-
-//     console.log('Testing FFmpeg COMMAND asynchronously.');
-
-//     console.log(`FFmpeg process started with arguments: '${ffmpegCommand}'.`);
-
-//     FFmpegKit.execute(ffmpegCommand).then(async (session) => {
-//       const state = FFmpegKit.sessionStateToString(await session.getState());
-//       const returnCode = await session.getReturnCode();
-//       const failStackTrace = await session.getFailStackTrace();
-//       const output = await session.getOutput();
-
-//       console.log(`FFmpeg process exited with state ${state} and rc ${returnCode}.${notNull(failStackTrace, '\\n')}`);
-
-//       appendOutput(output);
-
-//       if (state === 'FAILED' || !returnCode.isValueSuccess()) {
-//         console.log('Command failed. Please check output for the details.');
-//       }
-//     });
-//   };
-
-//   const runFFprobe = () => {
-//     clearOutput();
-
-//     let ffprobeCommand = commandText;
-
-//     console.log('Testing FFprobe COMMAND asynchronously.');
-
-//     console.log(`FFprobe process started with arguments: '${ffprobeCommand}'.`);
-
-//     FFmpegKit.execute(ffprobeCommand).then(async (session) => {
-//       const state = FFmpegKit.sessionStateToString(await session.getState());
-//       const returnCode = await session.getReturnCode();
-//       const failStackTrace = await session.getFailStackTrace();
-//       const output = await session.getOutput();
-
-//       console.log(`FFprobe process exited with state ${state} and rc ${returnCode}.${notNull(failStackTrace, '\\n')}`);
-
-//       appendOutput(output);
-
-//       if (state === 'FAILED' || !returnCode.isValueSuccess()) {
-//         console.log('Command failed. Please check output for the details.');
-//       }
-//     });
-//   };
-
-//   return (
-//     <View style={styles.screenStyle}>
-//       <View style={styles.headerViewStyle}>
-//         <Text style={styles.headerTextStyle}>
-//           FFmpegKit ReactNative
-//         </Text>
-//       </View>
-//       <View style={styles.textInputViewStyle}>
-//         <TextInput
-//           style={styles.textInputStyle}
-//           autoCapitalize='none'
-//           autoCorrect={false}
-//           placeholder="Enter command"
-//           underlineColorAndroid="transparent"
-//           onChangeText={(text) => setCommandText(text)}
-//           value={commandText}
-//         />
-//       </View>
-//       <View style={styles.buttonViewStyle}>
-//         <TouchableOpacity
-//           style={styles.buttonStyle}
-//           onPress={runFFmpeg}>
-//           <Text style={styles.buttonTextStyle}>RUN FFMPEG</Text>
-//         </TouchableOpacity>
-//       </View>
-//       <View style={styles.buttonViewStyle}>
-//         <TouchableOpacity
-//           style={styles.buttonStyle}
-//           onPress={runFFprobe}>
-//           <Text style={styles.buttonTextStyle}>RUN FFPROBE</Text>
-//         </TouchableOpacity>
-//       </View>
-//       <View style={styles.outputViewStyle}>
-//         <ScrollView
-//           ref={(view) => {
-//             this.scrollViewReference = view;
-//           }}
-//           onContentSizeChange={(width, height) => this.scrollViewReference.scrollTo({ y: height })}
-//           style={styles.outputScrollViewStyle}>
-//           <Text style={styles.outputTextStyle}>{outputText}</Text>
-//         </ScrollView>
-//       </View>
-//     </View>
-//   );
-// };
-
-// export default ClippingFunction;
 
 
 const styles = StyleSheet.create({
