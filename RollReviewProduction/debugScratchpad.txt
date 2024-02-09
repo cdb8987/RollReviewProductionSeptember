@@ -6,7 +6,8 @@ Functional component:  I asked chatGPT to convert a class component FFMpeg (whic
 - issue with the functional component transformation
     -UPDATE -- FUNCTIONAL COMPONENT CRASHED IN ISOLATION -- error message on android -
     "com.facebook.react.common.JavascriptException: TypeError: undefined is not a function"
-    -Error is at the javascript layer.  YAY!  I can debug without constant rebuilds.  
+    -Error is at the javascript layer.  YAY!  I can debug without constant rebuilds. 
+    - When rendering component in expo : TypeError: _ffmpegKitReactNative.FFmpegKit.enableLogCallback is not a function (it is undefined) 
 - error with the integration
 - error with the build environment in rollReview that is different than the build environment in ffmpeg1
 
