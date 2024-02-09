@@ -15,7 +15,7 @@ import AddTechniqueInputText from './AddTechniqueInputText'
 import { handleAddPosition, handleAddTechnique } from '../../Functions/functions';
 import { SetPositionsContext } from '../Contexts/SetPositionsContext';
 import { SetTechniquesContext } from '../Contexts/SetTechniquesContext';
-import { trimVideoWithFFmpeg } from '../../Functions/functions';}
+import { trimVideoWithFFmpeg } from '../../Functions/functions';
 
 
 
