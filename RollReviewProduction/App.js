@@ -46,9 +46,11 @@ import {positionSelectionContext}from './Components/Contexts/positionSelectionCo
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SetPositionsContext } from './Components/Contexts/SetPositionsContext';
 import { SetTechniquesContext } from './Components/Contexts/SetTechniquesContext';
-import getSAFUriAsync from './Functions/GetSAFURIfromexpofilepath'
+import { trimVideoWithFFmpeg } from './Functions/functions';
 
-// getSAFUriAsync('file:///data/user/0/host.exp.exponent/files/1707430008649.mp4')
+const testInputPath = 'file:///data/user/0/com.cdb8987.ReactNativeDrills/files/1704636486860.mp4'
+const testOutputPath = 'file:///data/user/0/com.cdb8987.ReactNativeDrills/files/1704636486860IWASCLIPPEDPROGRAMMATICALLY.mp4'
+trimVideoWithFFmpeg(inputVideoPathURI, 0, 1, outPutVideoPathURI)
 
 
 const isAndroid = Platform.OS == 'android'

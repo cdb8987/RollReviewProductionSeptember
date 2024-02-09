@@ -25,9 +25,6 @@ export function trimVideoWithFFmpeg(inputVideoPathURI, startTime, duration, outP
     //Executes the FFmpeg operation
     runFFmpegProgramattically(FFmpegCommandString)
     
-    
-    
-    
     function formatDuration(duration) {
     let hours = Math.floor(duration / 3600);
     let minutes = Math.floor((duration - (hours * 3600)) / 60);
