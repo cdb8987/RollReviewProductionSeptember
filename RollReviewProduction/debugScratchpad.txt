@@ -11,4 +11,13 @@ Functional component:  I asked chatGPT to convert a class component FFMpeg (whic
 - error with the integration
 - error with the build environment in rollReview that is different than the build environment in ffmpeg1
 
+
+
+UPDATE:  when converting the functional component back to class component, I was able to use it and I got a new error which were just failed attempts to call native methods.  I'm going to run a build using the class component. Even though I may not be able to use it....if it works, I will be able to ascertain the following:
+
+1.my build environment is correct for ffmpeg
+2.I can test if the ffmpeg application can access application storage (from the expo file system).  
+
+If it DOES work, this will be valuable information.  
+
  
