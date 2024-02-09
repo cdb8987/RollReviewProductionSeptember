@@ -4,9 +4,6 @@ import { Video, Audio, ResizeMode } from 'expo-av';
 import {useEffect, useState} from 'react'
 import { Divider} from 'react-native-paper';
 
-
-
-
 export default function ClippedVideoPlayback({
   videoRecord, 
   isFocused, 

@@ -1,3 +1,10 @@
-Does FFMpeg have access to local video uris?  
-VERIFY:  pass in created URI, execute ffmpeg operation on it, see if it works
---Build the app with the ffmpeg module in the "more" component.  Set the app to console log URI file paths.  Then copy and paste file path into the ffmpeg section and see if it returns a "no such file or directory" error.  If it doesn't, we can move on.  
+1. Does FFMpeg have access to local video uris?  
+VERIFY:  pass in created URI, execute ffmpeg operation on it, see if it works---UNRESOLVED
+--Build the app with the ffmpeg module in the "more" component.  Set the app to console log URI file paths.  Then copy and paste file path into the ffmpeg section and see if it returns a "no such file or directory" error.  If it doesn't, we can move on. --RESULT -- app crashed after splash screen when I navigated to MORE tab. 
+
+Functional component:  I asked chatGPT to convert a class component FFMpeg (which worked on my device) into a functional component so I could modify it.  However, I cannot test it without building it as an apk.  I'm running that build now.  If it works, then the ffmpeg piece works, then I know there is a problem with the integration of the component into roll review (or a problem with the build environment of roll review which I have not verified.).  It is most likely one of the following:
+- issue with the functional component transformation
+- error with the integration
+- error with the build environment in rollReview that is different than the build environment in ffmpeg1
+
+ 
