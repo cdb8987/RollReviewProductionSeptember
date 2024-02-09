@@ -20,4 +20,23 @@ UPDATE:  when converting the functional component back to class component, I was
 
 If it DOES work, this will be valuable information.  
 
+
+Okay we are now writing new videofiles programmatically using ffmpeg.  
+
+Time to link this function to the actual app.  
+
+We need to record:  
+
+
+
+1:  What information goes into asyncstorage when you tag a clip?
+
+{"createdAt": 2024-02-09T19:03:50.673Z, "current": {}, "notes": "Notes blah blah", "position": "Back Control", "recordID": 1707505430673, "recordType": "localVideoClip", "result": "Attempted Submission", "technique": "Armbar", "thumbnailURI": "file:///data/user/0/host.exp.exponent/files/1707505431198.jpg", "timestamp": 1057, "uri": "file:///data/user/0/host.exp.exponent/files/1707430008649.mp4"}
+
+
+
+2: What information is being used to play a clip in the rollReviewsection?
+
+{"createdAt": "2024-02-09T19:03:50.673Z", "current": {}, "notes": "Notes blah blah", "position": "Back Control", "recordID": 1707505430673, "recordType": "localVideoClip", "result": "Attempted Submission", "technique": "Armbar", "thumbnailURI": "file:///data/user/0/host.exp.exponent/files/1707505431198.jpg", "timestamp": 1057, "uri": "file:///data/user/0/host.exp.exponent/files/1707430008649.mp4"}
+
  

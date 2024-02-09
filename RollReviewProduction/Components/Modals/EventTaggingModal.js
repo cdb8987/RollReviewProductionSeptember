@@ -159,6 +159,7 @@ const AddPositionTextInputModal = ()=>{
         }
 
         localVideoHistory.data.push(eventRecord)
+        
         await AsyncStorage.setItem('LocalVideoHistory', JSON.stringify(localVideoHistory))
         
       }
