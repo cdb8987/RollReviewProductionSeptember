@@ -42,6 +42,8 @@ export default function ClippedVideoPlayback({
 
   return isFocused && selectedVideoKey===videoRecord.recordID?
     <>
+    <Text>VIDEO URI  {videoRecord.uri}</Text>
+    <Text>GAP</Text>
     <TouchableOpacity 
     style={styles.container}
     onPress={()=>{
@@ -51,7 +53,7 @@ export default function ClippedVideoPlayback({
         <Text style={styles.feedText}>{videoRecord.technique} | {videoRecord.position} | {videoRecord.result}</Text>
         <Text >{[day, ' ', month,'-',date, ' ', year ]}</Text>
         <Text>NOTES: {videoRecord.notes}</Text>
-        <Text>VIDEO URI{videoRecord.uri}</Text>
+        
         
       </View> 
       <Video
