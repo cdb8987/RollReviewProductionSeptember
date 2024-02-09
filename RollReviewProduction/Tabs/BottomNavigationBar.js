@@ -5,7 +5,7 @@ import DashboardTab from './DashboardTab';
 import RecordTab from './RecordTab'
 import StatsTab from './StatsTab'
 import MoreTab from './MoreTab'
-import ClippingFunction from '../Functions/ClippingFunction'
+import FFmpegInputUIComponent from '../Functions/FFmpegInputUIComponent'
 import EmptyPlaceholderScreen from '../Components/EmptyPlaceholderScreen';
 
 
@@ -63,7 +63,7 @@ function BottomNavigationBar() {
             />
         <Tab.Screen 
             name='More' 
-            component={ClippingFunction} 
+            component={FFmpegInputUIComponent} 
             options={{
               tabBarLabel: 'More',
               tabBarIcon: () => (

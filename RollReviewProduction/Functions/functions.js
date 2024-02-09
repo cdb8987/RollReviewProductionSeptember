@@ -1,4 +1,73 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+    FFmpegKit,
+    FFmpegKitConfig, FFprobeSession, Level, LogRedirectionStrategy, SessionState
+} from "ffmpeg-kit-react-native";
+
+/**
+ * 
+ * @param {String} inputVideoPathURI file path to the video to be trimmed from expo's file system.  
+ * @param {Number} startTime start time of the video measured in seconds
+ * @param {*} duration duration of the video measured in seconds
+ * @param {*} outPutVideoPathURI 
+ */
+
+export function trimVideoWithFFmpeg(inputVideoPathURI, startTime, duration, outPutVideoPathURI){
+    const startTimeString = formatDuration(startTime)
+    const durationString = formatDuration(duration)
+     
+    const FFmpegCommandString = `-i ${inputVideoPathURI} -ss ${startTimeString} -t ${durationString} -c:v copy -c:a copy ${outPutVideoPathURI}` 
+    
+    //need to set up instance of FFmpeg Kit Config.  IS THIS ASYNC?
+    FFmpegKitConfig.enableLogCallback(undefined);
+    FFmpegKitConfig.enableStatisticsCallback(undefined);
+    
+    //Executes the FFmpeg operation
+    runFFmpegProgramattically(FFmpegCommandString)
+    
+    
+    
+    
+    function formatDuration(duration) {
+    let hours = Math.floor(duration / 3600);
+    let minutes = Math.floor((duration - (hours * 3600)) / 60);
+    let seconds = duration - (hours * 3600) - (minutes * 60);
+
+    // Pad with '0' if necessary
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    return `${hours}:${minutes}:${seconds}`;
+}
+    
+    //alters the runFFmpeg command to accept command text from a function argument instead of user input/state   
+    function runFFmpegProgramattically(commandText){
+        let ffmpegCommand = commandText;
+
+        console.log(`Current log level is ${Level.levelToString(FFmpegKitConfig.getLogLevel())}.`);
+
+        console.log('Testing FFmpeg COMMAND asynchronously.');
+
+        console.log(`FFmpeg process started with arguments: \'${ffmpegCommand}\'.`);
+
+        FFmpegKit.execute(ffmpegCommand).then(async (session) => {
+            const state = FFmpegKitConfig.sessionStateToString(await session.getState());
+            const returnCode = await session.getReturnCode();
+            const failStackTrace = await session.getFailStackTrace();
+            const output = await session.getOutput();
+
+            console.log(`FFmpeg process exited with state ${state} and rc ${returnCode}.${notNull(failStackTrace, "\\n")}`);
+
+            this.appendOutput(output);
+
+            if (state === SessionState.FAILED || !returnCode.isValueSuccess()) {
+                console.log("Command failed. Please check output for the details.");
+            }
+        });
+    };
+
+}
 
 export let startingPositions = ["Guard", "Side Control", "Mount", "Back Control"]
 export let startingTechniques = ['Armbar', 'Kimura', 'Lapel Choke', 'Triangle Choke', 'Americana', 'Head and Arm Choke', 'Rear Naked Choke', 'Escape', 'Sweep']

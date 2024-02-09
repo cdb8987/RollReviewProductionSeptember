@@ -18,7 +18,7 @@ function notNull(string, valuePrefix) {
     return (string === undefined || string == null) ? "" : valuePrefix.concat(string);
 }
 
-class ClippingFunction extends Component {
+class FFmpegInputUIComponent extends Component {
     constructor(props) {
         super(props);
 
@@ -71,7 +71,7 @@ class ClippingFunction extends Component {
             }
         });
     };
-
+    
     runFFprobe = () => {
         this.clearOutput();
 
@@ -143,7 +143,7 @@ class ClippingFunction extends Component {
         </View>);
     }
 }
-export default ClippingFunction;
+export default FFmpegInputUIComponent;
 
 
 
