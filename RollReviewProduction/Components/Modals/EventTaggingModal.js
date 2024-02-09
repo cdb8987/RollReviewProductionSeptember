@@ -15,6 +15,7 @@ import AddTechniqueInputText from './AddTechniqueInputText'
 import { handleAddPosition, handleAddTechnique } from '../../Functions/functions';
 import { SetPositionsContext } from '../Contexts/SetPositionsContext';
 import { SetTechniquesContext } from '../Contexts/SetTechniquesContext';
+import { trimVideoWithFFmpeg } from '../../Functions/functions';}
 
 
 
@@ -147,7 +148,12 @@ const AddPositionTextInputModal = ()=>{
         eventRecord['recordType'] = 'localVideoClip'
         eventRecord['recordID'] = d.getTime()
         eventRecord['result']=eventType
-        eventRecord['uri']=videoRecord.uri
+        //Run FFmpeg and create a new clip
+        const outputPath = videoRecord.uri + "FFMPEG" + d.getTime()  
+        trimVideoWithFFmpeg(videoRecord.uri, timestamp, 10000, outputPath)
+        
+        //set localVideoClip record to point to ffmpeg generated video URI
+        eventRecord['uri']= outputPath
         eventRecord['thumbnailURI']=await generateThumbnailatTimeStamp(videoRecord.uri, timestamp)
         eventRecord['timestamp']=timestamp
         
