@@ -48,7 +48,7 @@ import { SetPositionsContext } from './Components/Contexts/SetPositionsContext';
 import { SetTechniquesContext } from './Components/Contexts/SetTechniquesContext';
 import getSAFUriAsync from './Functions/GetSAFURIfromexpofilepath'
 
-getSAFUriAsync('file:///data/user/0/host.exp.exponent/files/1707430008649.mp4')
+// getSAFUriAsync('file:///data/user/0/host.exp.exponent/files/1707430008649.mp4')
 
 
 const isAndroid = Platform.OS == 'android'

@@ -5,6 +5,7 @@ import DashboardTab from './DashboardTab';
 import RecordTab from './RecordTab'
 import StatsTab from './StatsTab'
 import MoreTab from './MoreTab'
+import ClippingFunction from '../Functions/ClippingFunction'
 import EmptyPlaceholderScreen from '../Components/EmptyPlaceholderScreen';
 
 
@@ -62,7 +63,7 @@ function BottomNavigationBar() {
             />
         <Tab.Screen 
             name='More' 
-            component={MoreTab} 
+            component={ClippingFunction} 
             options={{
               tabBarLabel: 'More',
               tabBarIcon: () => (
