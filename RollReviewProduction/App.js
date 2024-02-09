@@ -48,9 +48,10 @@ import { SetPositionsContext } from './Components/Contexts/SetPositionsContext';
 import { SetTechniquesContext } from './Components/Contexts/SetTechniquesContext';
 import { trimVideoWithFFmpeg } from './Functions/functions';
 
+
 const testInputPath = 'file:///data/user/0/com.cdb8987.ReactNativeDrills/files/1704636486860.mp4'
-const testOutputPath = 'file:///data/user/0/com.cdb8987.ReactNativeDrills/files/1704636486860IWASCLIPPEDPROGRAMMATICALLY.mp4'
-trimVideoWithFFmpeg(inputVideoPathURI, 0, 1, outPutVideoPathURI)
+const testOutputPath = `file:///data/user/0/com.cdb8987.ReactNativeDrills/files/1704636486860_IWASCLIPPEDPROGRAMMATICALLY.mp4`
+trimVideoWithFFmpeg(testInputPath, 0, 1, testOutputPath)
 
 
 const isAndroid = Platform.OS == 'android'
