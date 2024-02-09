@@ -27,7 +27,7 @@ Time to link this function to the actual app.
 
 We need to record:  
 
-
+//
 
 1:  What information goes into asyncstorage when you tag a clip?
 
