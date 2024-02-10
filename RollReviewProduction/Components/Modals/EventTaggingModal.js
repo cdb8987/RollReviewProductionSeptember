@@ -150,7 +150,7 @@ const AddPositionTextInputModal = ()=>{
         eventRecord['result']=eventType
         //Run FFmpeg and create a new clip
         const uriWithoutSuffix = videoRecord.uri.split('.mp4')[0]
-        const outputPath = videoRecord.uri + "FFMPEG" + d.getTime() + '.mp4'  
+        const outputPath = uriWithoutSuffix + "FFMPEG" + d.getTime() + '.mp4'  
         trimVideoWithFFmpeg(videoRecord.uri, timestamp/1000, 10000/1000, outputPath)
         //
         //set localVideoClip record to point to ffmpeg generated video URI
