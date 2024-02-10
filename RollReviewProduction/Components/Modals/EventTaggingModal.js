@@ -43,7 +43,12 @@ export default function EventTaggingModal({
   // '\nvideoRecord',videoRecord,
   // '\nmodalSelected',modalSelected,)
 
-    const showModal = () => setVisible(true);
+  
+  //These margins (in milliseconds) are passed into ffmpeg to determine how much time will be incorporated before and after the tag event.  Hardcoded now but will eventually pass in as customizable context. 
+  const marginBeforeEventTag= 10000
+  const marginAfterEventTag = 5000  
+  
+  const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
     
     const containerStyle = {backgroundColor: 'white', padding: 20, flex: 1};
@@ -151,11 +156,15 @@ const AddPositionTextInputModal = ()=>{
         //Run FFmpeg and create a new clip
         const uriWithoutSuffix = videoRecord.uri.split('.mp4')[0]
         const outputPath = uriWithoutSuffix + "FFMPEG" + d.getTime() + '.mp4'  
-        console.log('trimVideoWithFFmpeg', trimVideoWithFFmpeg(videoRecord.uri, timestamp/1000, 10000/1000, outputPath))
+        
+        const startTime = timestamp > marginBeforeEventTag? timestamp - marginBeforeEventTag : 0
+        const duration = marginBeforeEventTag + marginAfterEventTag
+        
+        trimVideoWithFFmpeg(videoRecord.uri, startTime/1000 , duration/1000, outputPath)
         //
         //set localVideoClip record to point to ffmpeg generated video URI
         eventRecord['uri']= outputPath
-        eventRecord['thumbnailURI']=await generateThumbnailatTimeStamp(videoRecord.uri, timestamp)
+        eventRecord['thumbnailURI']=await generateThumbnailatTimeStamp(videoRecord.uri, startTime)
         eventRecord['timestamp']=timestamp
         
         console.log('timestamp: ', timestamp)
