@@ -63,6 +63,7 @@ export function trimVideoWithFFmpeg(inputVideoPathURI, startTime, duration, outP
             }
         });
     };
+    
 
 }
 

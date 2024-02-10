@@ -54,7 +54,8 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
       const thumbnail = await VideoThumbnails.getThumbnailAsync(
         videoURI,
         {
-          time: timeStamp-10000,
+          // time: timeStamp-10000,
+          time: timeStamp,
         }
         
       );
