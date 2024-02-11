@@ -21,6 +21,7 @@ export default function RollingScreen(){
     const positionSelection = useContext(positionSelectionContext)
     const techniqueSelection= useContext(techniqueSelectionContext)
     const [selectedVideoKey, setSelectedVideoKey] = useState(null)
+    const [videoPlaybackChildUpdated, setVideoPlaybackChildUpdated] = useState(false)
     
     const resultOptions = ['Improved Position', 'Lost Position', 'Attempted Submission', 'Defended Submission', 'Win', 'Loss']
     const [resultSelection, setResultSelection] = useState('')
@@ -87,6 +88,8 @@ export default function RollingScreen(){
     selectedVideoKey={selectedVideoKey}
     onSelect={()=>{ setSelectedVideoKey(item.item.recordID)}}
     isFocused={isFocused}
+    videoPlaybackChildUpdated={videoPlaybackChildUpdated}
+    setVideoPlaybackChildUpdated={setVideoPlaybackChildUpdated}
     />}
 
     return (

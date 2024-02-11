@@ -3,13 +3,16 @@ import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import { Video, Audio, ResizeMode } from 'expo-av';
 import {useEffect, useState} from 'react'
 import { Divider} from 'react-native-paper';
+import { displayDeleteConfirmationAlert} from '../Functions/functions';
 
 export default function ClippedVideoPlayback({
   videoRecord, 
   isFocused, 
   duration, 
   selectedVideoKey, 
-  onSelect}) {
+  onSelect,
+  videoPlaybackChildUpdated, 
+  setVideoPlaybackChildUpdated}) {
   //inFocusStatus refers to whether the video is scrolled over and hovered on
   
   console.log('duration: ', duration, "\nvideoRecord:", videoRecord)
@@ -94,7 +97,7 @@ export default function ClippedVideoPlayback({
   <TouchableOpacity
     style={styles.container}
     onPress={()=>{ onSelect()}}
-    
+    onLongPress={()=>{displayDeleteConfirmationAlert(videoRecord, videoPlaybackChildUpdated, setVideoPlaybackChildUpdated)}}
     
     >
     <View><Text style={styles.feedText}>{videoRecord.technique} | {videoRecord.position} | {videoRecord.result}</Text><Text >{[day, ' ', month,'-',date, ' ', year ]}</Text><Text>NOTES: {videoRecord.notes}</Text></View>
