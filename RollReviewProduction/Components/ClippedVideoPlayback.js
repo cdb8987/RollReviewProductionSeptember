@@ -39,7 +39,7 @@ export default function ClippedVideoPlayback({
 
   return isFocused && selectedVideoKey===videoRecord.recordID?
     <>
-    <Text>VIDEO URI  {videoRecord.uri}</Text>
+    <View><Text>VIDEO URI  {videoRecord.uri}</Text></View>
     <Text>GAP</Text>
     <TouchableOpacity 
     style={styles.container}

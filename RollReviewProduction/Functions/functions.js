@@ -191,9 +191,18 @@ const updateLocalVideoRecordData = async (videoRecordType, videoStorageURI, thum
   // }
 }
 
+//REFACTOR the addLocalVideoFullRecord and addLocalVideoClipRecord functions no longer need to be broken out since all videos going forward can play full length clips or videos.  This can be consolidated.  
 export const addLocalVideoFullRecord=(URI, thumbnailURI)=>{updateLocalVideoRecordData('localVideoFull', URI, thumbnailURI, 0)}
 
 export const addLocalVideoClipRecord=(URI, thumbnailURI, timestamp, )=>{updateLocalVideoRecordData('localVideoClip', URI, thumbnailURI, timestamp)}
+
+export const deleteLocalVideoRecord = async (recordID)=>{
+  const storedData = await getData('LocalVideoHistory')
+  const localVideoHistory = storedData
+  localVideoHistory.data = localVideoHistory.data.filter(x=>x.recordID!==recordID)
+  await AsyncStorage.setItem('LocalVideoHistory', JSON.stringify(localVideoHistory))
+
+}
 
 export const handleAddPosition = async(positions, setPositions, newPosition)=>{
             

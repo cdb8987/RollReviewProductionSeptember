@@ -10,13 +10,10 @@ import { Divider } from 'react-native-paper';
 import EventTaggingModal from './Modals/EventTaggingModal';
 import { Button } from 'react-native-paper';
 import Emoji from 'react-native-emoji';
+import { deleteLocalVideoRecord } from '../Functions/functions';
 
 
-
-
-
-
-export default function VideoPlayback({videoRecord,  isFocused, onSelect, selectedVideoKey}) {
+export default function VideoPlayback({videoRecord,  isFocused, onSelect, selectedVideoKey, videoPlaybackChildUpdated, setVideoPlaybackChildUpdated}) {
   const dateArray=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const dateRecord = new Date(videoRecord.createdAt)
   const day = dateArray[dateRecord.getDay()]
@@ -41,6 +38,38 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
     videoRef.current.playAsync();}
     
   };
+
+  function displayDeleteConfirmationAlert(){
+    Alert.alert(
+        'Delete Video',
+        'Are you sure you want to delete this video?',
+        [
+            {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+            },
+            {
+                text: 'Delete', 
+                onPress: () => deleteFile(videoRecord.uri), 
+                style: 'destructive'
+            },
+        ],
+        {cancelable: false},
+    );
+}
+  
+
+  async function deleteFile(path) {
+    try {
+        await FileSystem.deleteAsync(path);
+        await deleteLocalVideoRecord(videoRecord.recordID)
+        console.log('File deleted successfully', path);
+        setVideoPlaybackChildUpdated(!videoPlaybackChildUpdated)
+    } catch (error) {
+        console.error('Error deleting file', error);
+    }
+  }
 
   
   useEffect(() => {
@@ -90,6 +119,8 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
      
     
   }
+
+
 
 
   return isFocused && selectedVideoKey===videoRecord.recordID?
@@ -177,6 +208,7 @@ export default function VideoPlayback({videoRecord,  isFocused, onSelect, select
   : <TouchableOpacity
     style={styles.container}
     onPress={()=>{onSelect()}}
+    onLongPress={displayDeleteConfirmationAlert}
     
     
     >

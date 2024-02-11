@@ -7,6 +7,7 @@ import { useIsFocused } from '@react-navigation/native';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { SetVideoCameraScreenSelected } from "./Contexts/SetVideoCameraScreenSelected";
 
+
 export default function RollReviewScreen(){
     const isFocused = useIsFocused()
     const setvideoCameraScreenSelected=useContext(SetVideoCameraScreenSelected)
@@ -21,9 +22,11 @@ export default function RollReviewScreen(){
     const [selectedVideoKey, setSelectedVideoKey] = useState(null)
     
     const [videos, setVideos] = useState()
+    const [videoPlaybackChildUpdated, setVideoPlaybackChildUpdated] = useState(false)
    
-    
+    console.log('videoPlaybackChildUpdated outside useEffect', videoPlaybackChildUpdated)
     useEffect(()=>{const getURIs = async ()=>{
+        console.log('videoPlaybackChildUpdated inside useEffect', videoPlaybackChildUpdated)
         const LocalVideoHistory = await getData('LocalVideoHistory');
 
    
@@ -37,13 +40,15 @@ export default function RollReviewScreen(){
         setVideos(FullVideosArray.reverse());
          }; 
          getURIs()
-        }, [isFocused])
+        }, [isFocused, videoPlaybackChildUpdated])
     
     
     
    
 
     const renderVideoCard = (item) => {return <VideoPlayback  
+        videoPlaybackChildUpdated={videoPlaybackChildUpdated}
+        setVideoPlaybackChildUpdated={setVideoPlaybackChildUpdated}
         videoRecord={item.item}
         selectedVideoKey={selectedVideoKey}
         onSelect={()=>{setSelectedVideoKey(item.item.recordID)}}
