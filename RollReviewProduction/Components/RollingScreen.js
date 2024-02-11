@@ -80,7 +80,7 @@ export default function RollingScreen(){
       
          }; 
          getURIs()
-        }, [isFocused, positionSelection,techniqueSelection, resultSelection ])
+        }, [isFocused, positionSelection,techniqueSelection, resultSelection, videoPlaybackChildUpdated])
 
     const renderVideoClipCard =(item) => {return <ClippedVideoPlayback   
     duration={15000} 
