@@ -3,6 +3,8 @@ import {
     FFmpegKit,
     FFmpegKitConfig, FFprobeSession, Level, LogRedirectionStrategy, SessionState
 } from "ffmpeg-kit-react-native";
+import * as FileSystem from 'expo-file-system';
+import { Alert} from 'react-native';
 
 /**
  * 
@@ -195,6 +197,43 @@ const updateLocalVideoRecordData = async (videoRecordType, videoStorageURI, thum
 export const addLocalVideoFullRecord=(URI, thumbnailURI)=>{updateLocalVideoRecordData('localVideoFull', URI, thumbnailURI, 0)}
 
 export const addLocalVideoClipRecord=(URI, thumbnailURI, timestamp, )=>{updateLocalVideoRecordData('localVideoClip', URI, thumbnailURI, timestamp)}
+
+
+
+
+
+export function displayDeleteConfirmationAlert(videoRecord, parentComponentState, parentComponentStateUpdateCB){
+    Alert.alert(
+        'Delete Video',
+        'Are you sure you want to delete this video?',
+        [
+            {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+            },
+            {
+                text: 'Delete', 
+                onPress: () => deleteFile(videoRecord.uri), 
+                style: 'destructive'
+            },
+        ],
+        {cancelable: false},
+    );
+
+    async function deleteFile(path) {
+    try {
+        await FileSystem.deleteAsync(path);
+        await deleteLocalVideoRecord(videoRecord.recordID)
+        console.log('File deleted successfully', path);
+        parentComponentStateUpdateCB(!parentComponentState)
+        // setVideoPlaybackChildUpdated(!videoPlaybackChildUpdated)
+    } catch (error) {
+        console.error('Error deleting file', error);
+    }
+  }
+}
+
 
 export const deleteLocalVideoRecord = async (recordID)=>{
   const storedData = await getData('LocalVideoHistory')
