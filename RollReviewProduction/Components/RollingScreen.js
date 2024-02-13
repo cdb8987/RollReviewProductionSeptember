@@ -1,5 +1,5 @@
 import React from "react";
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet, Text} from 'react-native';
 import {useState, useEffect, useRef, useContext} from 'react'
 import VideoPlayback from './VideoPlayback'
 import {getData} from '../Functions/functions'
@@ -96,6 +96,7 @@ export default function RollingScreen(){
 
         
         <View style={{flex: 1}}>
+            
             <DropdownSingleSelect 
                 style={styles.dropdown}
                 inputOptions={resultOptions} 
